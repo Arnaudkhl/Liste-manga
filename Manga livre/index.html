@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com/"></script><!--le lien cdn pour tailwindcss --> 
+    <title>Document</title>
+</head>
+<body>
+   <!-- component -->
+<script src="//unpkg.com/alpinejs" defer></script>
+<nav 
+class="z-0 relative" 
+x-data="{open:false,menu:false, lokasi:false}">
+  <div class="relative z-10 bg-yellow-300 shadow">
+    <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="flex items-center px-2 lg:px-0">
+          <a class="flex-shrink-0" href="#">
+            <img class="block lg:hidden h-12 w-16" src="./images/kisspng-e-book-book-cover-several-books-5aa63f6a4af714.4173108215208446503071.png" alt="Logo">
+            <img class="hidden lg:block h-12 w-auto" src="./images/kisspng-e-book-book-cover-several-books-5aa63f6a4af714.4173108215208446503071.png" alt="Logo">
+          </a>
+          <div class="hidden lg:block lg:ml-2">
+            <div class="flex">
+              <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-800 font-semibold hover:bg-yellow-500 hover:text-white transition duration-150 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 "> Manga </a>
+              <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-800 font-semibold hover:bg-yellow-500 hover:text-white transition duration-150 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 "> Article </a>
+              <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-800 font-semibold hover:bg-yellow-500 hover:text-white transition duration-150 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 "> Ebooks </a>
+              <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-800 font-semibold hover:bg-yellow-500 hover:text-white transition duration-150 ease-in-out cursor-pointer focus:outline-none focus:text-white focus:bg-gray-700 "> Promo </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
+          <div class="max-w-lg w-full lg:max-w-xs">
+            <label for="search" class="sr-only">Search </label>
+            <form methode="get" action="#" class="relative z-50">
+              <button type="submit" id="searchsubmit" class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <input type="text" name="s" id="s" class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-yellow-200 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:text-gray-900 sm:text-sm transition duration-150 ease-in-out" placeholder="Search">
+            </form>
+          </div>
+        </div>
+        <div class="flex lg:hidden">
+          <button @click="menu=!menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div x-show="menu" class="block md:hidden">
+      <div class="px-2 pt-2 pb-3">
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-white font-semibold font-medium hover:bg-yellow-500 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Location </a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-white font-semibold font-medium hover:bg-yellow-500 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Article </a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-white font-semibold font-medium hover:bg-yellow-500 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Recipe </a>
+        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-white font-semibold font-medium hover:bg-yellow-500 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Promo </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="bg-gray-200 h-6 text-center">
+ <h2> jusqu'à 50% de reduction </h2>
+  </div> 
+  <div class="text-center pt-10 font-bold text-xl">
+    <h1> BD, Manga et Humour : les derniers coups de cœur de nos libraires</h1>
+  </div>
+        
+<div class="bg-white">
+    <div class="max-w-2xl mx-auto py-16 px-4 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 class="sr-only">Products</h2>
+
+        <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-5 xl:gap-x-9 ">
+            <a href="#" class="group py-8" >
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/44/5c/d9/14244932/1507-1/tsp20220625094443/Kaiju-N-8.jpg"
+                        alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Kaiju n° 8 - Tome 05 : Kaiju N°8 kaze edition</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900 pb-5">6.90€</p>
+            </a>
+
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/c7/7d/d8/14187975/1507-1/tsp20220630175210/Spy-x-Family.jpg"
+                        alt="Olive drab green insulated bottle with flared screw lid and flat top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Spy x Family - Tome 8 : Spy x Family</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/84/6b/d9/14248836/1507-1/tsp20220703091150/One-Piece-Edition-originale.jpg"
+                        alt="Person using a pen to cross a task off a productivity paper card."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">One Piece - Tome 101 : One Piece - Édition originale</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/98/35/d7/14103960/1507-1/tsp20220706080254/Jujutsu-Kaisen.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Jujutsu Kaisen - Tome 16 : Jujutsu Kaisen</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/52/8f/d5/13995858/1507-1/tsp20220703105158/Naruto-edition-Hokage.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Naruto - Tome 1 : Naruto - édition Hokage</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/bc/ed/d4/13954492/1507-1/tsp20220625072852/Blue-Lock.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Blue Lock - Tome 07 : Blue Lock</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/7c/0c/d6/14027900/1507-1/tsp20220625075624/One-Piece-Edition-originale.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">One Piece - Tome 101 : One Piece - Édition originale</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/7a/76/d9/14251642/1507-1/tsp20220629073815/GTO-Paradise-Lost.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">GTO - Tome 16 : GTO Paradise Lost pika edition</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/c1/d0/d8/14209217/1507-1/tsp20220703103650/Wild-police-story.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Wild Police Story : Keisatsu G - Tome 1 </h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/af/d0/d8/14209199/1507-1/tsp20220703104025/Detective-Conan.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Détective Conan - Tome 100 : Détective Conan</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/08/3e/d3/13843976/1507-1/tsp20220625095453/Dragon-Ball-Super.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">Dragon Ball Super - Tome 16 : Dragon Ball Super</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <a href="#" class="group py-8">
+                <div
+                    class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/5e/dd/d3/13884766/1507-1/tsp20220625104326/City-Hunter-Rebirth.jpg"
+                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                        class="w-full h-full object-center  group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700">City Hunter - Tome 09 : City Hunter Rebirth</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">6.90€</p>
+            </a>
+
+            
+            <!-- More products... -->
+        </div>
+    </div>
+</div>
+<!-- component -->
+<div class="pb-10">
+<ul class="flex justify-center ">
+    <li class="mx-1 px-3 py-2 bg-gray-200 text-gray-500 rounded-lg">
+        <a class="flex items-center font-bold" href="#">
+            <span class="mx-1">previous</span>
+        </a>
+    </li>
+    <li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
+        <a class="font-bold" href="#">1</a>
+    </li>
+    <li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
+        <a class="font-bold" href="#">2</a>
+    </li>
+    <li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
+        <a class="font-bold" href="#">3</a>
+    </li>
+    <li class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
+        <a class="flex items-center font-bold" href="#">
+            <span class="mx-1">Next</span>
+        </a>
+    </li>
+</ul>
+</div>
+</body>
+</html>
